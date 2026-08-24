@@ -1,20 +1,13 @@
 name: Workflow Dispatch - Manual Release
 on:
-  workflow_dispatch:
+  workflow_call:
     inputs:
       environment:
-        description: 'Target deployment environment'
         required: true
-        default: 'staging'
-        type: choice
-        options:
-          - staging
-          - production
+        type: string
       
       message:
-        description: 'Execution Deployment started'
         required: true
-        default: 'Good morning, team!'
         type: string
 
 
@@ -42,9 +35,3 @@ jobs:
     steps:
       - run: echo "Deploying to ${{ inputs.environment }}"
       - run: echo "${{ inputs.message }}"
-
-  TriggerJob:
-    uses: .github\workflows\workflow_on_call_dispatch_example.yml
-    with:
-      environment: ${{ inputs.environment }}
-      message: ${{ inputs.message }}
