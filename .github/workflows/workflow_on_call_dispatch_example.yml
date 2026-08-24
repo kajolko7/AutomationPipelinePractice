@@ -1,4 +1,4 @@
-name: Workflow Dispatch - Manual Release
+name: Workflow On Call - Manual Release
 on:
   workflow_call:
     inputs:
