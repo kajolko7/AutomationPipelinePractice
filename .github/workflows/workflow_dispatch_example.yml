@@ -42,3 +42,9 @@ jobs:
     steps:
       - run: echo "Deploying to ${{ inputs.environment }}"
       - run: echo "${{ inputs.message }}"
+
+  TriggerJob:
+    uses: .github\workflows\cron_example.yml
+    steps:
+      - run: echo "Deploying to ${{ inputs.environment }}"
+      - run: echo "${{ inputs.message }}"
