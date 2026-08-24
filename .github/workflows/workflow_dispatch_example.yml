@@ -14,7 +14,7 @@ on:
       message:
         description: 'Execution Deployment started'
         required: true
-        default: 'v1.0.0'
+        default: 'Good morning, team!'
         type: string
 
 
